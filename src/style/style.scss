@@ -1,0 +1,48 @@
+html, body {
+  scroll-behavior: smooth;
+}
+
+#pdf-init {
+  display: block;
+  text-align: center;
+  border-style: solid dashed;
+  border-width: thick;
+  border-color: gray;
+  background: #cccccc;
+  padding: 1rem;
+  cursor: pointer;
+  transition: 0.5s;
+
+  &:hover {
+    color: #ffffff;
+  }
+}
+
+#signature-canvas {
+  border-style: dashed dashed solid dashed;
+  border-width: thin thin thick thin;
+  cursor: pointer;
+}
+
+#instructions {
+  border-style: dashed;
+  border-width: thin;
+  border-color: #cccccc;
+}
+#instructions p.h3 {
+  border-style: none none solid none;
+  border-width: thin;
+  border-color: #cccccc;
+}
+
+.pdf-canvas {
+  cursor: crosshair;
+  border-style: solid dashed;
+  border-width: thick;
+  margin: auto;
+  display: block;
+}
+
+.hidden {
+  display: none;
+}

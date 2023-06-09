@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>{{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="description" content={{description}}>
+    {% include "_partials/scripts.njk" %}
+    {% include "_partials/styles.njk" %}
+    {% include "_partials/favicon.njk" %}
+  </head>
+
+  <body>
+  	<div class="whitespace-md"></div>
+
+  	<main class="container-main" id="main">
+      {% block main %}
+      {% endblock %}
+  	</main>
+  	<div class="whitespace-md"></div>
+
+  	{% include "_partials/footer.njk" %}
+  </body>
+</html>

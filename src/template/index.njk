@@ -1,0 +1,106 @@
+{% extends "_layouts/default.njk" %}
+
+{% set title = "PDF Form Filler" %}
+{% set description = "Use this tool to fill out a PDF form you would otherwise have to print out. Save time and save trees!" %}
+
+{% block main %}
+  <h1 class="display-3 text-center">PDF Form Filler</h1>
+  <hr>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="container mb-2 sticky-top">
+
+          <div class="btn-toolbar" role="toolbar">
+            <div class="btn-group me-2 mb-3" role="group">
+              <button type="button" id="undo-btn" class="btn btn-danger">Undo Change</button>
+              <button type="button" id="save-btn" class="btn btn-success">Save PDF</button>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Upload a PDF</label>
+            <div class="input-group">
+              <input type="file" id="pdf-upload" class="form-control" accepted="*.pdf">
+            </div>
+          </div>
+
+          <div class="mb-2">
+            <div class="input-group">
+              <div class="input-group-text">
+                <input type="radio" name="input-type" value="text" id="text-input" class="form-check-input mt-0" checked>
+              </div>
+              <div class="input-group-text">
+                <label>Text</label>
+              </div>
+            </div>
+            <div class="input-group">
+              <select id="text-font" class="form-select">
+                <option value="Arial" selected>Arial</option>
+                <option value="Times New Roman">Times New Roman</option>
+              </select>
+              <input type="number" id="text-font-size" class="form-control" value="12" min="1" placeholder="Font size">
+            </div>
+          </div>
+
+          <div class="mb-2">
+            <div class="input-group">
+              <div class="input-group-text">
+                <input type="radio" name="input-type" value="checkbox" id="checkbox-input" class="form-check-input mt-0">
+              </div>
+              <div class="input-group-text">
+                <label>Checkbox</label>
+              </div>
+            </div>
+            <div class="input-group">
+              <select id="checkbox-shape" class="form-select">
+                <option value="Round" selected>Round</option>
+                <option value="Square">Square</option>
+              </select>
+              <input id="checkbox-size" type="number" class="form-control" value="4" min="1" placeholder="Pixel size">
+            </div>
+          </div>
+
+          <div class="mb-2">
+            <div class="input-group">
+              <div class="input-group-text">
+                <input type="radio" name="input-type" value="signature" id="signature-input" class="form-check-input mt-0">
+              </div>
+              <div class="input-group-text">
+                <label>Signature</label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div id="pdf-pages" class="col-sm-8">
+        <label id="pdf-init" class="display-6" for="pdf-upload">
+          Upload a PDF to Begin
+        </label>
+
+        <br>
+
+        <div class="container" id="instructions">
+          <p class="h3">Usage</p>
+          <p>
+            Select <b>Text</b> and click anywhere on the PDF to insert text. Font and size options are available.
+          </p>
+          <p>
+            Select <b>Checkbox</b> and click anywhere on the PDF to add a mark. Shape and size options are available.
+          </p>
+          <p>
+            Select <b>Signature</b> and click anywhere on the PDF drawing with a mouse or touch device.
+          </p>
+          <p>
+            For every input, clicking <b>OK</b> saves your change and <b>Cancel</b> discards it. The <b>Undo</b> button discards your previously saved changes.
+          </p>
+          <p>
+            Click <b>Save PDF</b> to download your PDF with the changes included.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
